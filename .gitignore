@@ -1,0 +1,10 @@
+# NetBeans: salida de compilación y configuración local de cada máquina
+MiEdificio/build/
+MiEdificio/dist/
+MiEdificio/nbproject/private/
+
+# Varios
+*.class
+*~
+.DS_Store
+Thumbs.db
