@@ -1,17 +1,22 @@
 package miedificio;
 
-import datos.Conexion;
-import java.sql.Connection;
-import java.sql.SQLException;
+import vista.MenuPrincipal;
 
 public class MiEdificio {
 
     public static void main(String[] args) {
-        try (Connection con = Conexion.conectar()) {
-            System.out.println("Conexión exitosa a la base miedificio");
-        } catch (SQLException e) {
-            System.out.println("Error al conectar: " + e.getMessage());
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println("No se pudo aplicar el look and feel: " + ex.getMessage());
         }
+
+        java.awt.EventQueue.invokeLater(() -> new MenuPrincipal().setVisible(true));
     }
 
 }
